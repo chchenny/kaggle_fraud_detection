@@ -1,3 +1,6 @@
 ## Local .gitignore
-/data/*  # To prenvent sending large or sensitive file
+
+# Prevent upload large or sensitive data
+data/*
+data/creditcard.csv
 
