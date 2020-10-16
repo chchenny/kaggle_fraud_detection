@@ -1,0 +1,3 @@
+## Local .gitignore
+/data  # To prenvent sending large or sensitive file
+
