@@ -4,3 +4,6 @@
 data/*
 data/creditcard.csv
 
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
