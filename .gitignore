@@ -9,3 +9,4 @@ data/creditcard.csv
 
 # Cache from py files
 src/__pycache__/
+.mypy_cache/
