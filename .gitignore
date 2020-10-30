@@ -7,3 +7,5 @@ data/creditcard.csv
 # Jupyter Notebooks
 .ipynb_checkpoints/
 
+# Cache from py files
+src/__pycache__/

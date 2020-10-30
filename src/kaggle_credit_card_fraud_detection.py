@@ -104,7 +104,7 @@ class DatabaseConnection:
                 .options(**self.options)
                 .option("sfSchema", "DAAP_SLN_SCRATCH")
                 .option("query", sql_query)
-                .load()
+                .load().toPandas()
             )
         else:
             print("No query executed")
