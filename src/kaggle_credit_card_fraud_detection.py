@@ -8,9 +8,10 @@ from sklearn.metrics import roc_auc_score, recall_score
 
 
 class DatabaseConnection:
-    '''
+    """
         Class to dynamically select best way to retrieve data from snowflake
-    '''
+    """
+
     def __init__(self, env_name, dictkv):
         """
             env_name (str):
