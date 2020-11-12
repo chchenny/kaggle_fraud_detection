@@ -107,3 +107,6 @@ if __name__ == "__main__":
 #
 # Naive Bayes AUC score: 0.964   Recall: 0.602
 # Random Forest AUC score: 0.982   Recall: 0.780
+
+# COMMAND ----------
+
