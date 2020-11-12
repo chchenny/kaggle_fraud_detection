@@ -1,4 +1,10 @@
-import time
+# Databricks notebook source
+import os
+from sqlalchemy import create_engine
+import snowflake.connector as sf
+import pandas as pd
+from pyspark.sql import SparkSession
+from pyspark.dbutils import DBUtils
 
 class DatabaseConnection:
     """
@@ -25,7 +31,6 @@ class DatabaseConnection:
             var_dict (dict) example:
                 {"user_var": "DB_SF_USER", "pass_var": "DB_SF_PASS"}
         """
-        import os
 
         username = os.environ.get(var_dict.get("user_var"))
         password = os.environ.get(var_dict.get("pass_var"))
@@ -64,9 +69,6 @@ class DatabaseConnection:
 
     def return_query_df(self, sql_query):
         if self.env_name.lower() == "python":
-            from sqlalchemy import create_engine
-            import snowflake.connector as sf
-            import pandas as pd
 
             self._sf_python(self.var_kv)
             engine = create_engine(
@@ -80,9 +82,6 @@ class DatabaseConnection:
             engine.dispose()
             return df
         elif self.env_name.lower() == "databricks":
-            from pyspark.sql import SparkSession
-            from pyspark.dbutils import DBUtils
-
             spark = SparkSession.builder.getOrCreate()
             try:
                 dbutils = DBUtils(spark)
